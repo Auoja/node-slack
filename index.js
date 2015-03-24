@@ -14,10 +14,13 @@ var setup = function(param) {
     options = {};
     basePost = {};
 
-    options.url = 'https://' + param.team + '.slack.com/services/hooks/incoming-webhook?token=' + param.token;
+    options.url = param.url;
 
-    basePost.channel = param.channel;
-    basePost.username = param.user || MODULE_NAME
+    basePost.username = param.user || MODULE_NAME;
+
+    if (param.channel) {
+        basePost.channel = param.channel;
+    }
 
     if (param.icon_url) {
         basePost.icon_url = param.icon_url;
