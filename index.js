@@ -14,6 +14,7 @@ var setup = function(param) {
     options = {};
     basePost = {};
 
+    options.method = 'POST';
     options.url = param.url;
 
     basePost.username = param.user || MODULE_NAME;
