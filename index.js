@@ -45,9 +45,8 @@ var postToSlack = function(input) {
     }
 
     options.body = JSON.stringify(post);
-    options.method = 'PUT';
 
-    request(options, function(error, response, body) {
+    request.post(options, function(error, response, body) {
         if (!error && response.statusCode === 200) {
             console.log(MODULE_NAME + ': Posted update to ' + post.channel);
         } else if (!error) {
